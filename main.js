@@ -37,7 +37,7 @@ function gameLoop() {
     let human = String(getHumanChoice());
     let computer = String(getComputerChoice());
     winCondition(human, computer);
-    input = prompt("Press any key to keep playing Press 0 to quit");
+    let input = prompt("Press any key to keep playing Press 0 to quit");
   } while (input != "0");
 }
 gameLoop();
