@@ -1,4 +1,5 @@
 let choices = ["rock", "paper", "scissors"];
+
 let beats = {
   rock: "scissors",
   scissors: "paper",
@@ -33,11 +34,12 @@ function winCondition(human, computer) {
   }
 }
 function gameLoop() {
+  let input = 0;
   do {
     let human = String(getHumanChoice());
     let computer = String(getComputerChoice());
     winCondition(human, computer);
-    let input = prompt("Press any key to keep playing Press 0 to quit");
+    input = prompt("Press any key to keep playing Press 0 to quit");
   } while (input != "0");
 }
 gameLoop();
