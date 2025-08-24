@@ -29,7 +29,7 @@ function winCondition(human, computer) {
   } else if (beats[human] === computer) {
     alert(`you win! computer chose ${computer}`);
   } else {
-    console.log(`You Lose! computer chose ${computer}`);
+    alert(`You Lose! computer chose ${computer}`);
   }
 }
 
