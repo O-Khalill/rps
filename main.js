@@ -5,41 +5,32 @@ let beats = {
   scissors: "paper",
   paper: "rock",
 };
+function setupButtons() {
+  const rockBtn = document.querySelector(".rock button");
+  const paperBtn = document.querySelector(".paper button");
+  const scissorsBtn = document.querySelector(".scissor button");
 
+  rockBtn.addEventListener("click", () => playRound("rock"));
+  paperBtn.addEventListener("click", () => playRound("paper"));
+  scissorsBtn.addEventListener("click", () => playRound("scissors"));
+}
 function getComputerChoice() {
   let NumberOneToTen = Math.ceil(Math.random() * 10);
   let choice = NumberOneToTen % 3;
-  console.log(`The computer has chosen ${choices[choice]}`);
   return choices[choice];
 }
-function getHumanChoice() {
-  let humanChoice = prompt("Rock, Paper or Scissors?");
-  humanChoice = humanChoice.toLowerCase();
-  if (humanChoice === "r") {
-    humanChoice = "rock";
-  } else if (humanChoice === "p") {
-    humanChoice = "paper";
-  } else {
-    humanChoice = "scissors";
-  }
-  return humanChoice;
+function playRound(humanChoice) {
+  let computerChoice = getComputerChoice();
+  winCondition(humanChoice, computerChoice);
 }
 function winCondition(human, computer) {
   if (computer == human) {
-    console.log("Draw");
+    alert(`Draw! computer chose ${computer}`);
   } else if (beats[human] === computer) {
-    console.log("you win");
+    alert(`you win! computer chose ${computer}`);
   } else {
-    console.log("You Lose");
+    console.log(`You Lose! computer chose ${computer}`);
   }
 }
-function gameLoop() {
-  let input = 0;
-  do {
-    let human = String(getHumanChoice());
-    let computer = String(getComputerChoice());
-    winCondition(human, computer);
-    input = prompt("Press any key to keep playing Press 0 to quit");
-  } while (input != "0");
-}
-gameLoop();
+
+setupButtons();

@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #121212;
+}
+
+header > .logo {
+  display: flex;
+  align-items: flex-start;
+}
+header > .logo img {
+  width: 10%;
+}
+
+main > .hand-container {
+  padding-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+main .rock,
+main .paper,
+main .scissor {
+  background-color: #121212;
+  border-radius: 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+main img:hover {
+  transform: scale(0.9);
+  border-radius: 2rem;
+}
+main .hand-container button {
+  margin-top: 1rem;
+  padding: 1rem 4rem;
+  border-color: blanchedalmond;
+  box-shadow: none;
+  border-radius: 1rem;
+  color: black;
+  font-size: 1.5rem;
+  background-color: burlywood;
+  cursor: pointer;
+}
+main .hand-container button:hover {
+  background-color: white;
+  color: rgb(0, 0, 0);
+}
